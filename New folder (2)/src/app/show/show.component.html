@@ -1,0 +1,42 @@
+<div class="justify-content-start d-flex align-items-center flex-column my-3">
+    <mat-card>
+            <div *ngFor="let address of addresses" class=" w-80 my-3 justify-content-start align-items-center d-flex flex-column">
+            
+                <mat-form-field class="example-full-width">
+                    <mat-label>Street 1</mat-label>
+                    <input matInput placeholder="Street1" value="" [(ngModel)]="address.street1">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Street 2</mat-label>
+                    <input matInput placeholder="street 2" value="" [(ngModel)]="address.street2">
+                </mat-form-field>
+
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Town</mat-label>
+                    <input matInput placeholder="town" value="" [(ngModel)]="address.town">
+                </mat-form-field> 
+
+               
+                <mat-form-field appearance="fill">
+                    <mat-label>Country</mat-label>
+                    <mat-select [(value)]="address.country" [(ngModel)]="address.country">
+                      <mat-option [value]="country.iso2" *ngFor="let country of countries">{{country.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            </div>
+
+            <div class="justify-content-center d-flex align-items-center">
+                <button mat-raised-button color="primary" (click)="addAddress()">
+                    <mat-icon>add</mat-icon>
+                    Add Address
+                </button>
+                <button mat-raised-button color="primary" (click)="saveAddress()">
+                    <mat-icon>save</mat-icon>
+                    Save Address
+                </button>
+            </div>
+    </mat-card>  
+</div>

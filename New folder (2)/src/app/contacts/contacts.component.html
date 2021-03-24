@@ -1,0 +1,32 @@
+<div>
+
+    <div>Contact List</div>
+    <div>You have {{contacts.length}} contacts</div>
+   
+    <div class="m-5"> 
+        <mat-card>
+            <div *ngFor="let contact of contacts" class="my-3 justify-content-start align-items-center d-flex flex-row" (click)="showContact(contact.id)">
+            <img [src]="contact.avatar"  class="rounded-circle" style="width:5%;">
+            <div class="justify-content-between d-flex align-items-center mt-2" style="width:100%;">
+                <h5 class="my-0 ml-3">{{contact.first_name}} {{contact.last_name}}</h5>
+            </div>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Name" value="" [(ngModel)]="contactName">
+                  </mat-form-field>
+
+                  <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon" (click)="addContact()">
+                    <mat-icon>add</mat-icon>
+                  </button>
+            
+            </div>
+        </mat-card>  
+    </div>
+
+
+        
+
+
+</div>

@@ -1,0 +1,37 @@
+<div>
+    <div class="pr-3 align-items-center justify-content-between d-flex flex-row py-3">
+      
+        <mat-icon aria-hidden="false" aria-label="Example home icon" class="ml-4" style="cursor:pointer;" (click)="toggleSidebar()">menu</mat-icon>
+      
+      
+        <b class="m-0" style="font-size: 2.2rem;font-weight: bold;">Cre.Club</b>
+      
+      <div>
+
+      </div>
+     
+  </div>
+
+  <mat-sidenav-container style="height:100vh;">
+    <mat-sidenav  mode="over"  style="width:215px;height:100%;background-color: #E3DFEF;" class="shadow"  [opened]="displaySidebar">
+    
+      <div class="nav-option my-2"  routerLinkActive="active-link"  [routerLink]="['/home']">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" class="mr-2">dashboard</mat-icon>
+          Home
+      </div>
+
+          
+      <div class="nav-option my-2"  routerLinkActive="active-link" [routerLink]="['/contacts']">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" class="mr-2">people</mat-icon>
+        Contacts 
+      </div>
+
+              
+    </mat-sidenav>
+
+  <mat-sidenav-content style="background-color:#F5F5F5;">
+    
+    <router-outlet> </router-outlet>
+  </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
